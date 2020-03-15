@@ -1,0 +1,6 @@
+framework module NativeObjectPool {
+  umbrella header "ObjectPool.h"
+
+  export *
+  module * { export * }
+}

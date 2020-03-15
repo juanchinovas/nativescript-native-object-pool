@@ -24,7 +24,7 @@ import { NativeObjectPool } from "nativescript-native-object-pool";
 ```typescript 
 class NativeObjectPool {
     static add(key: string, value: any): boolean;
-    static get(key: string): void;
+    static get(key: string): any;
     static remove(key: string): boolean;
     static removeAll(): void;
 }

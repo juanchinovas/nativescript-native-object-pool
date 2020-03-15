@@ -242,13 +242,15 @@ module.exports = env => {
                 { test: /\.scss$/, exclude: /[\/|\\]app\.scss$/, use: ["raw-loader", "resolve-url-loader", "sass-loader"] },
 
                 {
-                    test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/,
+                    test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/, 
+                    exclude: /.worker.ts$/,
                     use: [
                         "nativescript-dev-webpack/moduleid-compat-loader",
                         "nativescript-dev-webpack/lazy-ngmodule-hot-loader",
                         "@ngtools/webpack",
                     ]
                 },
+                { test: /\.worker.ts$/, loader: "ts-loader" },
 
                 // Mark files inside `@angular/core` as using SystemJS style dynamic imports.
                 // Removing this will cause deprecation warnings to appear.
@@ -275,7 +277,9 @@ module.exports = env => {
             new nsWebpack.GenerateNativeScriptEntryPointsPlugin("bundle"),
             // For instructions on how to set up workers with webpack
             // check out https://github.com/nativescript/worker-loader
-            new NativeScriptWorkerPlugin(),
+            new NativeScriptWorkerPlugin({
+                plugins: [ngCompilerPlugin]
+            }),
             ngCompilerPlugin,
             // Does IPC communication with the {N} CLI to notify events when running in watch mode.
             new nsWebpack.WatchStateLoggerPlugin(),

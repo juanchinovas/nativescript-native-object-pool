@@ -1,1 +1,9 @@
-<page-router-outlet></page-router-outlet>
+<StackLayout>
+    <!-- Add your page content here -->
+    
+    <Button text="click Me to add" (tap)="addSomeReference()"></Button>
+    <Button text="click Me to print keys" (tap)="printSomeReference()"></Button>
+    <Button text="click Me to remove keys" (tap)="removeSomeReference()"></Button>
+    <Button text="click Me to remove all" (tap)="removeAllReferences()"></Button>
+    <Button text="Run Worker" (tap)="startThread()"></Button>
+</StackLayout>

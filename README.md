@@ -1,18 +1,11 @@
 # nativescript-native-object-pool
 
-Add your plugin badges here. See [nativescript-urlhandler](https://github.com/hypery2k/nativescript-urlhandler) for example.
+This is a tiny NativeScript's plugin to share objects references between threads (main and Workers threads)
 
-Then describe what's the purpose of your plugin. 
-
-In case you develop UI plugin, this is where you can add some screenshots.
-
-## (Optional) Prerequisites / Requirements
-
-Describe the prerequisites that the user need to have installed before using your plugin. See [nativescript-firebase plugin](https://github.com/eddyverbruggen/nativescript-plugin-firebase) for example.
 
 ## Installation
 
-Describe your plugin installation steps. Ideally it would be something like:
+Copy and paste the code below to add this plugin into your app:
 
 ```javascript
 tns plugin add nativescript-native-object-pool
@@ -20,21 +13,22 @@ tns plugin add nativescript-native-object-pool
 
 ## Usage 
 
-Describe any usage specifics for your plugin. Give examples for Android, iOS, Angular if needed. See [nativescript-drop-down](https://www.npmjs.com/package/nativescript-drop-down) for example.
+All methods are statics. Just copy the import statament below and invoke the desire method.
 	
-	```javascript
-    Usage code snippets here
+	```typescript
+    import { NativeObjectPool } from "nativescript-native-object-pool";
     ```)
 
 ## API
 
-Describe your plugin methods and properties here. See [nativescript-feedback](https://github.com/EddyVerbruggen/nativescript-feedback) for example.
-    
-| Property | Default | Description |
-| --- | --- | --- |
-| some property | property default value | property description, default values, etc.. |
-| another property | property default value | property description, default values, etc.. |
-    
+```typescript 
+NativeObjectPool {
+    static add(key: string, value: any): boolean;
+    static get(key: string): void;
+    static remove(key: string): boolean;
+    static removeAll(): void;
+}
+``` 
 ## License
 
 Apache License Version 2.0, January 2004

@@ -1,7 +1,7 @@
 {
 	"name": "nativescript-native-object-pool",
 	"version": "1.0.0",
-	"description": "Your awesome NativeScript plugin.",
+	"description": "NativeScript's plugin to share objects references between threads (main and Workers)",
 	"main": "native-object-pool",
 	"typings": "index.d.ts",
 	"nativescript": {
@@ -34,11 +34,13 @@
 		"NativeScript",
 		"JavaScript",
 		"Android",
-		"iOS"
+		"iOS",
+		"Share pool",
+		"Object pool"
 	],
 	"author": {
-		"name": "Your Name",
-		"email": "youremail@yourdomain.com"
+		"name": "juanchinovas",
+		"email": "juanchinovas@gmail.com"
 	},
 	"bugs": {
 		"url": "https://github.com/juanchinovas/nativescript-native-object-pool/issues"

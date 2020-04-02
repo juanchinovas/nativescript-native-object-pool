@@ -1,6 +1,6 @@
 {
 	"name": "nativescript-native-object-pool",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "NativeScript's plugin to share objects references between threads (main and Workers)",
 	"main": "native-object-pool",
 	"typings": "index.d.ts",

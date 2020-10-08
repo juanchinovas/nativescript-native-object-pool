@@ -9,3 +9,4 @@ platforms/android/*
 !platforms/android/*.jar
 !platforms/android/*/*.jar
 .DS_Store
+package-lock.json
